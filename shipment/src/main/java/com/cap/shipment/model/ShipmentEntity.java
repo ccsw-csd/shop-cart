@@ -1,7 +1,6 @@
 package com.cap.shipment.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "shipment")

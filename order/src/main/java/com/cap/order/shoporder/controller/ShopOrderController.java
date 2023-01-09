@@ -1,7 +1,6 @@
 package com.cap.order.shoporder.controller;
 
 import com.cap.order.shoporder.request.ShopOrderDataRequest;
-import com.cap.order.shoporder.request.ShopOrderRequest;
 import com.cap.order.shoporder.logic.ShopOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

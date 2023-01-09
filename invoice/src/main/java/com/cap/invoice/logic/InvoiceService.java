@@ -17,7 +17,7 @@ public class InvoiceService {
 
         if(invoice.length() < 60){
 
-            request.getData().setInvoice(request.getData().getUuid() + "-" + request.getData().getCustomer() + "-" + request.getData().getProduct());
+            request.getData().setInvoice(invoice);
 
             kafkaProducer.sendMessage("shop_order", request);
         } else {

@@ -1,7 +1,6 @@
 package com.cap.order.shoporder.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "shop_order")
