@@ -6,12 +6,16 @@ import com.cap.order.shoporder.request.ShopOrderRequest;
 import com.cap.order.shoporder.model.ShopOrderEntity;
 import com.cap.order.shoporder.model.ShopOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
 public class ShopOrderService {
+
+    @Value("${spring.kafka.consumer.group-id}")
+    private String groupId;
 
     @Autowired
     private ShopOrderRepository orderRepository;
@@ -26,6 +30,7 @@ public class ShopOrderService {
         create(data);
 
         ShopOrderRequest request = new ShopOrderRequest();
+        request.setGroupId(groupId);
         request.setSuccess(true);
         request.setData(data);
 

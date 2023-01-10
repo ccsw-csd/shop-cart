@@ -5,11 +5,15 @@ import com.cap.stock.stock.logic.StockService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
 public class KafkaConsumer {
+
+  @Value("${spring.kafka.consumer.group-id}")
+  private String groupId;
 
   @Autowired
   private StockService stockService;
@@ -22,7 +26,10 @@ public class KafkaConsumer {
     try {
       System.out.println("Message has been received: " + message);
       ShopOrderRequest request = mapper.readValue(message, ShopOrderRequest.class);
-      stockService.process(request);
+
+      if(groupId.equals(request.getGroupId())) {
+        stockService.process(request);
+      }
 
     } catch (JsonProcessingException e) {
       System.out.println("Error parsing request");
