@@ -1,9 +1,9 @@
-package com.cap.stock.stock.logic;
+package com.cap.stock.logic;
 
-import com.cap.stock.stock.producer.KafkaProducer;
-import com.cap.stock.stock.request.ShopOrderRequest;
-import com.cap.stock.stock.model.StockEntity;
-import com.cap.stock.stock.model.StockRepository;
+import com.cap.stock.model.StockEntity;
+import com.cap.stock.model.StockRepository;
+import com.cap.stock.producer.KafkaProducer;
+import com.cap.stock.request.ShopOrderRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
 package com.cap.order.shoporder.model;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "shop_order")

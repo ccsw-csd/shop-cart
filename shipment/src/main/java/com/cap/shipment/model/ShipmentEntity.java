@@ -1,6 +1,6 @@
 package com.cap.shipment.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "shipment")

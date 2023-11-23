@@ -1,4 +1,4 @@
-package com.cap.stock.stock.model;
+package com.cap.stock.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

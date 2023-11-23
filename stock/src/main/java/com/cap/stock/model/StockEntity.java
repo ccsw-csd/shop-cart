@@ -1,7 +1,6 @@
-package com.cap.stock.stock.model;
+package com.cap.stock.model;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "stock")

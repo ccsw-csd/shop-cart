@@ -1,7 +1,7 @@
-package com.cap.stock.stock.consumer;
+package com.cap.stock.consumer;
 
-import com.cap.stock.stock.request.ShopOrderRequest;
-import com.cap.stock.stock.logic.StockService;
+import com.cap.stock.logic.StockService;
+import com.cap.stock.request.ShopOrderRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

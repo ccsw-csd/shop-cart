@@ -1,6 +1,6 @@
 package com.cap.payment.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "payment")

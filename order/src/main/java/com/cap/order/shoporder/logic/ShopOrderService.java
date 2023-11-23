@@ -1,10 +1,10 @@
 package com.cap.order.shoporder.logic;
 
+import com.cap.order.shoporder.model.ShopOrderEntity;
+import com.cap.order.shoporder.model.ShopOrderRepository;
 import com.cap.order.shoporder.producer.KafkaProducer;
 import com.cap.order.shoporder.request.ShopOrderDataRequest;
 import com.cap.order.shoporder.request.ShopOrderRequest;
-import com.cap.order.shoporder.model.ShopOrderEntity;
-import com.cap.order.shoporder.model.ShopOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

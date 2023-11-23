@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
-import org.springframework.util.concurrent.ListenableFuture;
-import org.springframework.util.concurrent.ListenableFutureCallback;
+
+import java.util.concurrent.CompletableFuture;
 
 @Component
 public class KafkaProducer {
@@ -23,16 +23,12 @@ public class KafkaProducer {
     try {
       String message = mapper.writeValueAsString(request);
 
-      ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, message);
+      CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, message);
 
-      future.addCallback(new ListenableFutureCallback<>() {
-        @Override
-        public void onSuccess(SendResult<String, String> result) {
+      future.whenComplete((result, ex) -> {
+        if (ex == null) {
           System.out.println("Message has been sent: " + message);
-        }
-
-        @Override
-        public void onFailure(Throwable ex) {
+        } else {
           System.out.println("Something went wrong with the message: " +  message);
         }
       });

@@ -1,4 +1,4 @@
-package com.cap.stock.stock.request;
+package com.cap.stock.request;
 
 public class ShopOrderRequest {
 
