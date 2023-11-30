@@ -2,7 +2,6 @@ package com.cap.notification.logic;
 
 import com.cap.notification.request.ShopOrderDataRequest;
 import com.cap.notification.request.ShopOrderRequest;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,12 +28,6 @@ public class NotificationService {
     private void sendMessage(String to, String subject, String text) {
 
         System.out.println("Email to: " + to + " | Status: " + subject + " | " + text);
-
-        SimpleMailMessage message = new SimpleMailMessage();
-
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(text);
     }
 
     private String getError(ShopOrderDataRequest request){
